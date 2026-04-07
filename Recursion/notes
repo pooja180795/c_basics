@@ -1,1 +1,4 @@
-
+-> Anything that can be done with Iteration, can be done with Recursion and vice-versa.
+-> Recursion can somtimes gives the most simple solution.
+-> Base Case is the condition which stops Recursion.
+-> Iteration has infinite loops and Recursion has stack-overflow.
