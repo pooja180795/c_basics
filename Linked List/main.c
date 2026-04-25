@@ -11,5 +11,12 @@ int main()
     insertAtEnd(&head, 4);
 
     display(head);
+
+    insertAtBeginning(&head , 22);
+    display(head);
+
+    deleteNode(&head, 2);
+
+    display(head);
     return 0;
 }

@@ -20,6 +20,7 @@ void insertAtBeginning(n** head_add, int data)
 void display(n* head)
 {
     n* current_add = head;
+    
     while(current_add != NULL)
     {
         printf("%d->", current_add->data);
@@ -42,4 +43,32 @@ void insertAtEnd(n** head_add, int data)
         current_add = current_add->next;
     }
     current_add->next = lastNode;
+}
+
+void deleteNode(n** head, int data)
+{
+    n* current = *head;
+    n* prev = NULL;
+
+    while(current != NULL && current->data != data)
+    {
+        prev = current;
+        current = current->next;
+    }
+
+    if(current == NULL)
+    {
+        printf("Node not found\n");
+        return;
+    }
+
+    if(prev == NULL)                 // deleting head ncd ..ode
+    {
+        *head = current->next;
+    }
+    else
+    {
+        prev->next = current->next;
+    }
+    free(current);
 }
