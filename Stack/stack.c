@@ -9,7 +9,7 @@ void pushStack(s* stack, int data)
             return;
         }
         stack->top++;
-        stack->data[stack->top] = data; 
+        stack->data[stack->top] = data;  
 }
 
 int popStack(s* stack)

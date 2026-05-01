@@ -13,10 +13,11 @@ int main()
     display(head);
 
     insertAtBeginning(&head , 22);
-    display(head);
+    display(head); 
 
     deleteNode(&head, 2);
 
     display(head);
+    freeList(&head);
     return 0;
 }

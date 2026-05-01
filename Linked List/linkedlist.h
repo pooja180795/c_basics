@@ -11,5 +11,6 @@ void insertAtBeginning(n** head_add , int data);
 void display(n* head);
 void insertAtEnd(n** head_add, int data);
 void deleteNode(n** head, int data);
+void freeList(n** head);
 
 #endif

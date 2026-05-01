@@ -12,7 +12,7 @@ int main()
     pushStack(&myStack, 8);
     pushStack(&myStack, 7);
     pushStack(&myStack, 6);
-    pushStack(&myStack, 5);
+    pushStack(&myStack, 5); 
     pushStack(&myStack, 4);
     pushStack(&myStack, 3);
     pushStack(&myStack, 2);

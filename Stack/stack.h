@@ -13,3 +13,4 @@ int isEmpty(s* stack);        // returns 1 if empty, 0 if not
 void display(s* stack);       // print all elements
 
 #endif
+ 

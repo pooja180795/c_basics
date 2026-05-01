@@ -5,6 +5,11 @@
 n* createNode(int data)
 {
     n* newNode = malloc(sizeof(n));           // just 1 node
+    if (newNode == NULL)
+    {
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
@@ -37,6 +42,7 @@ void insertAtEnd(n** head_add, int data)
         *head_add = lastNode;               // new node becomes head
         return;
     }
+    
     n* current_add = *head_add;                       
     while(current_add->next != NULL)
     {
@@ -49,7 +55,7 @@ void deleteNode(n** head, int data)
 {
     n* current = *head;
     n* prev = NULL;
-
+ 
     while(current != NULL && current->data != data)
     {
         prev = current;
@@ -70,5 +76,16 @@ void deleteNode(n** head, int data)
     {
         prev->next = current->next;
     }
-    free(current);
+} 
+
+void freeList(n** head)
+{
+    n* temp;
+
+    while(*head != NULL)
+    {
+        temp = *head;
+        *head = (*head)->next;
+        free(temp);
+    }
 }
