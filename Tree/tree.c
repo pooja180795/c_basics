@@ -86,6 +86,59 @@ void postorder(Node* root)
     printf("%d ", root->data);
 }
 
+Node* deleteNode(Node* root, int x)
+{
+    if(root == NULL){
+        return NULL;
+    }
+
+    if(x < root->data)
+    {
+        root->left = deleteNode(root->left, x);
+    }
+
+    else if(x > root->data)
+    {
+        root->right = deleteNode(root->right, x);
+    }
+    
+    else{
+        if(root->left == NULL && root->right == NULL)
+        {
+            
+            free(root);
+            return NULL;
+        }
+
+        else if(root->left != NULL && root->right == NULL)
+        {
+            Node* temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        else if(root->left == NULL && root->right != NULL)
+        {
+            
+            Node* temp = root->right;
+            free(root);
+            return temp;
+        }
+
+        else{
+            
+            Node* successor = root->right;
+            while(successor->left != NULL)
+            {
+                successor = successor->left;
+            }
+            root->data = successor->data;
+            root->right = deleteNode(root->right, successor->data);
+        }
+    }
+    return root;
+}
+
 
 
 

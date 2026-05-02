@@ -13,5 +13,6 @@ void inorder(Node* root);
 void searchNode(Node* root, int x);
 void preorder(Node* root);
 void postorder(Node* root);
+Node* deleteNode(Node* root, int x);
 
 #endif
