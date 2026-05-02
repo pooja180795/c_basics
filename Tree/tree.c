@@ -40,6 +40,52 @@ void inorder(Node* root)
     inorder(root->right);
 }
 
+void searchNode(Node* root, int x)
+{
+    if(root == NULL)
+    {
+        printf("\n not found \n");
+        return;
+    }
+    if(x == root->data)
+    {
+        printf("\n found \n");
+        return;
+    }
+    if(x < root->data)
+    {
+        searchNode(root->left, x);
+        return;
+    }
+    if(x > root->data)
+    {
+        searchNode(root->right, x);
+    }
+}
+
+void preorder(Node* root)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+    printf("%d ", root->data);
+    preorder(root->left);
+    preorder(root->right);
+    
+}
+
+void postorder(Node* root)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d ", root->data);
+}
+
 
 
 
